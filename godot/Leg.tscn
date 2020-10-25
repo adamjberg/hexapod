@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://HexapodBodyMaterial.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="PrismMesh" id=3]
+
+[node name="Leg" type="Spatial"]
+
+[node name="ShoulderMesh" type="MeshInstance" parent="."]
+transform = Transform( 0.16131, -0.0432228, 0, 0.0432228, 0.16131, 0, 0, 0, 0.167, 1.5, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="KneeMesh" type="MeshInstance" parent="ShoulderMesh"]
+transform = Transform( 0.173648, 0.984807, 0, -0.984807, 0.173648, 0, 0, 0, 1, 5.98802, -9.53674e-07, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="LimbMesh" type="MeshInstance" parent="ShoulderMesh/KneeMesh"]
+transform = Transform( -9.75573e-08, 1.97605, 0, -0.598802, -3.21939e-07, 0, 0, 0, 0.598802, 5.98802, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 1 )
